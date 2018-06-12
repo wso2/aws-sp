@@ -1,3 +1,3 @@
-# Scalable Business-process
+# Scalable Worker
 
 ![pattern1](../images/scalable-worker.png)
