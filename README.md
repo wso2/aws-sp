@@ -17,8 +17,4 @@ git clone https://github.com/wso2/aws-sp.git
 
 5. Follow the on screen instructions and provide the SSH key value pair name given in step 2, Server-Certificate-Name given in step 3 and other requested information and proceed.
 
-6. Access the web UIs via the URLs available in the **Outputs** tab and login using the following credentials.
-   * Username: admin <br>
-   * Password: admin
 
-**NOTE:** The services listed through above URLs may take around 15 minutes to become available, after stack creation.
