@@ -37,7 +37,7 @@ Metadata:
           - DBEngine
           - DBEngineVersion
       - Label:
-          default: WSO2 Subscription Credentials
+          default: WSO2 Credentials
         Parameters:
           - WUMUsername
           - WUMPassword
