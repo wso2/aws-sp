@@ -1,20 +1,13 @@
 # AWS Resources for WSO2 Stream Processor
 
-This repository contains CloudFormation templates to deploy WSO2 Stream Processor in Amazon Web Services(AWS).
+This repository contains a CloudFormation template to deploy WSO2 Stream Processor in Amazon Web Services(AWS).
 
-## Quick Start Guide
+The WSO2 SP CloudFormation template uses Puppet to manage the server configurations and use the following AMI's to provision the deployment.
 
-1. Checkout this repository into your local machine using the following Git command.
-```
-git clone https://github.com/wso2/aws-sp.git
-```
+1. Puppetmaster AMI - Contains the Stream Processor GA distribution, WSO2 Update Manager and Puppet modules containing the configurations for SP deployment patterns.
 
-2. Go to [AWS console](https://console.aws.amazon.com/ec2/v2/home#KeyPairs:sort=keyName) and specify a key value pair for authentication in **us-east-1** region. This could be used to ssh into the instances. Add a Server Certificate to AWS using ACM or IAM as explained [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html). This will be used at the load balancer listeners.
+2. SP AMI - Contains the scripts that is required to create the Puppet catalog.
 
-3. Go to [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation/home) and select ``Launch Cloudformer``.
+First the Puppetmaster AMI would deploy and afterwards the product specific AMI's would deploy and request the necessary configurations from the Puppetmaster AMI to deploy the WSO2 Stream Processor.
 
-4. Browse to the cloned repository and select the Cloudformation template and proceed with the deployment.
-
-5. Follow the on screen instructions and provide the SSH key value pair name given in step 2, Server-Certificate-Name given in step 3 and other requested information and proceed.
-
-
+![pattern1](/images/scalable-worker.png)
